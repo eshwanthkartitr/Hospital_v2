@@ -221,7 +221,7 @@ const skillsData = [
   },
   {
     name: "Appwrite",
-    logo: "/logos/appwrite-original.png",
+    logo: "/logos/Appwrite-original.png",
     color: "text-pink-400"
   },
   {
