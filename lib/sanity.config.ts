@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 import { defineConfig } from 'sanity';
 import { visionTool } from '@sanity/vision';
 import * as schemaTypes from '../sanity/schemaTypes';

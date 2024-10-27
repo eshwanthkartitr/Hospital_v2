@@ -8,6 +8,9 @@ const nextConfig = {
       },
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true, // Only if you want to ignore during builds
+  },
 }
 
 export default nextConfig

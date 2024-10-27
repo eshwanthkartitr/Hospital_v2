@@ -7,10 +7,9 @@
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {schemaTypes} from './schemas'
-import {structure} from './sanity/structure'
 import { visionTool } from '@sanity/vision'
-import { apiVersion ,dataset,projectId} from './sanity/env'
-  
+import { apiVersion, dataset, projectId} from './sanity/env'
+
 export default defineConfig({
   basePath: '/studio',
   projectId,
@@ -19,7 +18,20 @@ export default defineConfig({
     types: schemaTypes,
   },
   plugins: [
-    deskTool(),
+    deskTool({
+      structure: (S) => 
+        S.list()
+          .title('Content')
+          .items([
+            S.listItem()
+              .title('Projects')
+              .child(
+                S.documentList()
+                  .title('Projects')
+                  .filter('_type == "project"')
+              ),
+          ]),
+    }),
     visionTool({defaultApiVersion: apiVersion}),
   ],
 })
